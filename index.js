@@ -11,9 +11,14 @@ app.get("/", (req, res) => {
 });
 
 app.use(router);
-const PORT = process.env.PORT || 5000
-var HOST = process.env.HOST || '0.0.0.0'
-//app.set("port", process.env.PORT || 5000);
-app.listen(PORT, HOST, () => {
-    console.log(`server is running at port`);
+// const PORT = process.env.PORT || 5000
+// var HOST = process.env.HOST || '0.0.0.0'
+// //app.set("port", process.env.PORT || 5000);
+// app.listen(PORT, HOST, () => {
+//     console.log(`server is running at port`);
+// });
+// app listen
+app.set("port", process.env.PORT || 5500);
+app.listen(app.get("port"), () => {
+    console.log(`server is running at port ${app.get("port")}`);
 });
