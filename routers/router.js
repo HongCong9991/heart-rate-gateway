@@ -8,8 +8,8 @@ router.use((req, res, next) => {
     next();
 });
 
-router.use(heartRateService);
-router.use(userService);
-//router.use(healthInfoService);
+router.use(heartRateService)
+router.use(userService)
+router.use(healthInfoService)
 
-module.exports = router;
+module.exports = router
