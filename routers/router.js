@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const heartRateService = require("./heartRateService");
-const healthInfoService = require("./healthInfoService");
-const userService = require("./userService");
+const heartRateService = require("./heartRateService")
+const healthInfoService = require("./healthInfoService")
+const userService = require("./userService")
 
 router.use((req, res, next) => {
+    console.log("Called: ", req.originalUrl)
     next();
 });
 

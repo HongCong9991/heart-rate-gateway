@@ -3,24 +3,37 @@ const express = require("express");
 const router = express.Router();
 const apiAdapter = require("./apiAdapter");
 
-const BASE_URL = "https://heart-rate-service-hcmus.herokuapp.com";
+const BASE_URL = "https://heart-rate-services.herokuapp.com";
 const api = apiAdapter(BASE_URL);
 
+// router.post("/api/users/login", (req, res) => {
+//     api.post(req.originalUrl, req.body).then(resp => {
+//         res.send(resp.data)
+//     })
+// })
+
+// router.post("/api/rates", (req, res) => {
+//     if (req.headers.token === undefined) {
+//         api.post(req.originalUrl).then((resp) => {
+//             res.send(resp.data);
+//         });
+//     } else {
+//         api.post(req.originalUrl, req.body, {
+//             headers: {
+//                 token: req.headers.token,
+//             },
+//         }).then((resp) => {
+//             res.send(resp.data);
+//         });
+//     }
+// });
+
 router.post("/api/rates", (req, res) => {
-    if (req.headers.token === undefined) {
-        api.post(req.originalUrl).then((resp) => {
-            res.send(resp.data);
-        });
-    } else {
-        api.post(req.originalUrl, req.body, {
-            headers: {
-                token: req.headers.token,
-            },
-        }).then((resp) => {
-            res.send(resp.data);
-        });
-    }
-});
+    api.post(req.originalUrl, req.body).then(resp => {
+        res.send(resp.data)
+    })
+})
+
 
 router.post("/api/rates/arr", (req, res) => {
     if (req.headers.token === undefined) {

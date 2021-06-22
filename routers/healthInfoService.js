@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const apiAdapter = require("./apiAdapter");
 
-const BASE_URL = "https://heart-rate-service-hcmus.herokuapp.com";
+const BASE_URL = "https://health-info-services.herokuapp.com";
 const api = apiAdapter(BASE_URL);
 
 router.post("/api/healthinfo/get", (req, res) => {
@@ -37,6 +37,5 @@ router.post("/api/healthinfo/update", (req, res) => {
         });
     }
 });
-
 
 module.exports = router;
