@@ -1,0 +1,6 @@
+[submodule "modules/@user-service"]
+	path = modules/@user-service
+	url = https://github.com/HongCong9991/user-service
+[submodule "modules/@heart-rate-service"]
+	path = modules/@heart-rate-service
+	url = https://github.com/HongCong9991/heart-rate-service
